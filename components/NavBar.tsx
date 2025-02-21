@@ -1,10 +1,11 @@
 import { LoginWithGitHUb, Logout } from "@/app/actions";
 import { auth } from "@/auth"
-import { BadgePlus, LogOut } from "lucide-react";
 import Image from "next/image"
 import Link from "next/link"
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { AvatarImage } from "@radix-ui/react-avatar";
+import { CiLogout } from "react-icons/ci";
+import { LuBadgePlus } from "react-icons/lu";
 
 export const NavBar = async () => {
     const session = await auth();
@@ -26,12 +27,12 @@ export const NavBar = async () => {
                         <>
                             <Link href="/startup/create">
                                 <span className="max-sm:hidden">Crear</span>
-                                <BadgePlus className="ml-3 size-6 sm:hidden text-green-500"></BadgePlus>
+                                <LuBadgePlus className="ml-3 size-6 sm:hidden text-green-500"/>
                             </Link>
                             <form action={Logout}>
                                 <button type="submit">
                                     <span className="max-sm:hidden">Logout</span>
-                                    <LogOut className="size-6 sm:hidden text-red-500"></LogOut>
+                                    <CiLogout className="size-6 sm:hidden text-red-500"/>
                                 </button>
                             </form>
                             <Link href={`/user/${session?.id}`}>

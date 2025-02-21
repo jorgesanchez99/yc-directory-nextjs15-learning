@@ -4,13 +4,13 @@ import { useActionState, useState } from "react";
 import { Textarea } from "./ui/textarea";
 import MDEditor from '@uiw/react-md-editor';
 import { Button } from "./ui/button";
-import { Send } from "lucide-react";
 import { formSchema } from "@/lib/validation";
 import {z} from 'zod';
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import Form from "next/form";
 import { createPitch } from "@/app/actions";
+import { IoIosSend } from "react-icons/io";
 
 export const StartupForm = () => {
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -148,7 +148,7 @@ export const StartupForm = () => {
                 disabled={isPending}
             >
                 {isPending ? 'Enviando...' : 'Enviar'}
-                <Send className="size-6 ml-2" />
+                <IoIosSend className="size-6 ml-2" />
             </Button>
         </Form>
     )

@@ -1,11 +1,11 @@
-import { UserIcon } from "lucide-react";
 import { defineField, defineType } from "sanity";
+import { FaUser } from "react-icons/fa";
 
 export const author = defineType({ 
     name: "author",
     title: "Author",
     type: "document",
-    icon : UserIcon,
+    icon : FaUser,
     fields: [
     defineField({
         name : "id",
